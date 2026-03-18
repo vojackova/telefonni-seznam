@@ -214,7 +214,7 @@
         <th data-col="oblast">Oblast <span class="sort-icon">↕</span></th>
         <th data-col="dept">Sekce <span class="sort-icon">↕</span></th>
         <th data-col="place">Pracoviště <span class="sort-icon">↕</span></th>
-        <th data-col="phone">Telefon <span class="sort-icon">↕</span></th>
+        <th data-col="phone">Mobil <span class="sort-icon">↕</span></th>
         <th data-col="landline">Pevná linka <span class="sort-icon">↕</span></th>
         <th data-col="email">E-mail <span class="sort-icon">↕</span></th>
       </tr>
@@ -228,7 +228,7 @@
 </div>
 
 <footer>
-  Aktualizováno: <span id="updateDate"></span> &nbsp;·&nbsp; Platné od 1. 1. 2026 &nbsp;·&nbsp; Interní dokument – Kultura a sport Budějce
+  Aktualizováno: <span id="updateDate"></span> &nbsp;·&nbsp; Platné od 1. 1. 2026 &nbsp;·&nbsp; Interní dokument – KSZM ČB p.o.
 </footer>
 
 <script>
@@ -239,94 +239,94 @@
 // ============================================================
 const employees = [
   // ── CELÁ ORGANIZACE ───────────────────────────────────────
-  { name:"Ing. Jan Velikovský MBA",         position:"Ředitel",                               oblast:"Celá organizace", dept:"Vedení",         place:"Ředitelství",       phone:"", email:"" },
-  { name:"Mgr. Petra Vokrojová Doubková",   position:"Asistentka ředitele",                   oblast:"Celá organizace", dept:"Administrativa", place:"Ředitelství",       phone:"", email:"" },
-  { name:"Ing. Bc. Adéla Vojčíková",        position:"Manažer digitální komunikace a IT",     oblast:"Celá organizace", dept:"Administrativa", place:"Ředitelství",       phone:"", email:"" },
-  { name:"Mgr. Tereza Buřková",             position:"Právník",                               oblast:"Celá organizace", dept:"Administrativa", place:"Ředitelství",       phone:"", email:"" },
-  { name:"Iva Ludvíková",                   position:"Personalistika a mzdy",                 oblast:"Celá organizace", dept:"Personální",     place:"Ředitelství",       phone:"", email:"" },
-  { name:"Lenka Turečková",                 position:"Ekonomický náměstek",                   oblast:"Celá organizace", dept:"Vedení",         place:"Ředitelství",       phone:"", email:"" },
-  { name:"Michaela Hotová",                 position:"Hlavní účetní",                         oblast:"Celá organizace", dept:"Účetnictví",     place:"Ředitelství",       phone:"", email:"" },
-  { name:"Iveta Poutníková",                position:"Finanční účetní",                       oblast:"Celá organizace", dept:"Účetnictví",     place:"Ředitelství",       phone:"", email:"" },
-  { name:"Veronika Jungwirtová",            position:"Účetní",                                oblast:"Celá organizace", dept:"Účetnictví",     place:"Ředitelství",       phone:"", email:"" },
-  { name:"Bc. Jarmila Němcová",             position:"Referent majetku",                      oblast:"Celá organizace", dept:"Účetnictví",     place:"Ředitelství",       phone:"", email:"" },
-  { name:"Vladislava Sedláková",            position:"Pokladní",                              oblast:"Celá organizace", dept:"Účetnictví",     place:"Ředitelství",       phone:"", email:"" },
-  { name:"Yvona Kubalová",                  position:"Pokladní",                              oblast:"Celá organizace", dept:"Účetnictví",     place:"Ředitelství",       phone:"", email:"" },
-  { name:"Jana Maršíková",                  position:"Pokladní",                              oblast:"Celá organizace", dept:"Účetnictví",     place:"Ředitelství",       phone:"", email:"" },
+  { name:"Ing. Jan Velikovský MBA",         position:"Ředitel",                               oblast:"Celá organizace", dept:"Vedení",         place:"Ředitelství",       phone:"", landline:"", email:"" },
+  { name:"Mgr. Petra Vokrojová Doubková",   position:"Asistentka ředitele",                   oblast:"Celá organizace", dept:"Administrativa", place:"Ředitelství",       phone:"", landline:"", email:"" },
+  { name:"Ing. Bc. Adéla Vojčíková",        position:"Manažer digitální komunikace a IT",     oblast:"Celá organizace", dept:"Administrativa", place:"Ředitelství",       phone:"", landline:"", email:"" },
+  { name:"Mgr. Tereza Buřková",             position:"Právník",                               oblast:"Celá organizace", dept:"Administrativa", place:"Ředitelství",       phone:"", landline:"", email:"" },
+  { name:"Iva Ludvíková",                   position:"Personalistika a mzdy",                 oblast:"Celá organizace", dept:"Personální",     place:"Ředitelství",       phone:"", landline:"", email:"" },
+  { name:"Lenka Turečková",                 position:"Ekonomický náměstek",                   oblast:"Celá organizace", dept:"Vedení",         place:"Ředitelství",       phone:"", landline:"", email:"" },
+  { name:"Michaela Hotová",                 position:"Hlavní účetní",                         oblast:"Celá organizace", dept:"Účetnictví",     place:"Ředitelství",       phone:"", landline:"", email:"" },
+  { name:"Iveta Poutníková",                position:"Finanční účetní",                       oblast:"Celá organizace", dept:"Účetnictví",     place:"Ředitelství",       phone:"", landline:"", email:"" },
+  { name:"Veronika Jungwirtová",            position:"Účetní",                                oblast:"Celá organizace", dept:"Účetnictví",     place:"Ředitelství",       phone:"", landline:"", email:"" },
+  { name:"Bc. Jarmila Němcová",             position:"Referent majetku",                      oblast:"Celá organizace", dept:"Účetnictví",     place:"Ředitelství",       phone:"", landline:"", email:"" },
+  { name:"Vladislava Sedláková",            position:"Pokladní",                              oblast:"Celá organizace", dept:"Účetnictví",     place:"Ředitelství",       phone:"", landline:"", email:"" },
+  { name:"Yvona Kubalová",                  position:"Pokladní",                              oblast:"Celá organizace", dept:"Účetnictví",     place:"Ředitelství",       phone:"", landline:"", email:"" },
+  { name:"Jana Maršíková",                  position:"Pokladní",                              oblast:"Celá organizace", dept:"Účetnictví",     place:"Ředitelství",       phone:"", landline:"", email:"" },
 
   // ── SPORT – Vedení / Admin ─────────────────────────────────
-  { name:"Ing. Jaroslav Masař",             position:"Provozní náměstek",                     oblast:"Sport", dept:"Vedení",         place:"Ředitelství",       phone:"", email:"" },
-  { name:"Bc. Petr Vokraj",                 position:"Projektový a koordinační manažer",      oblast:"Sport", dept:"Administrativa", place:"Ředitelství",       phone:"", email:"" },
-  { name:"Zdeňka Hambergerová",             position:"Provozní manažer",                      oblast:"Sport", dept:"Správa",         place:"Ředitelství",       phone:"", email:"" },
-  { name:"Ing. Nikola Járová",              position:"Ekonom provozu",                        oblast:"Sport", dept:"Účetnictví",     place:"Ředitelství",       phone:"", email:"" },
+  { name:"Ing. Jaroslav Masař",             position:"Provozní náměstek",                     oblast:"Sport", dept:"Vedení",         place:"Ředitelství",       phone:"", landline:"", email:"" },
+  { name:"Bc. Petr Vokraj",                 position:"Projektový a koordinační manažer",      oblast:"Sport", dept:"Administrativa", place:"Ředitelství",       phone:"", landline:"", email:"" },
+  { name:"Zdeňka Hambergerová",             position:"Provozní manažer",                      oblast:"Sport", dept:"Správa",         place:"Ředitelství",       phone:"", landline:"", email:"" },
+  { name:"Ing. Nikola Járová",              position:"Ekonom provozu",                        oblast:"Sport", dept:"Účetnictví",     place:"Ředitelství",       phone:"", landline:"", email:"" },
 
   // Elektrikář-Údržbář
-  { name:"Hynek Chlumecký",                 position:"Úsekový vedoucí elektrikář-údržbář",    oblast:"Sport", dept:"Provoz",         place:"Sportovní objekty", phone:"", email:"" },
-  { name:"Alžběta Brožková",                position:"Elektrikář-údržbář",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní objekty", phone:"", email:"" },
-  { name:"Karolína Laudová",                position:"Elektrikář-údržbář",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní objekty", phone:"", email:"" },
-  { name:"Vendula Kantorová",               position:"Elektrikář-údržbář",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní objekty", phone:"", email:"" },
-  { name:"Jaroslava Římnáčová",             position:"Elektrikář-údržbář",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní objekty", phone:"", email:"" },
-  { name:"Adam Vlček",                      position:"Elektrikář-údržbář",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní objekty", phone:"", email:"" },
-  { name:"Kristýna Knesplová",              position:"Elektrikář-údržbář",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní objekty", phone:"", email:"" },
+  { name:"Hynek Chlumecký",                 position:"Úsekový vedoucí elektrikář-údržbář",    oblast:"Sport", dept:"Provoz",         place:"Sportovní objekty", phone:"", landline:"", email:"" },
+  { name:"Alžběta Brožková",                position:"Elektrikář-údržbář",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní objekty", phone:"", landline:"", email:"" },
+  { name:"Karolína Laudová",                position:"Elektrikář-údržbář",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní objekty", phone:"", landline:"", email:"" },
+  { name:"Vendula Kantorová",               position:"Elektrikář-údržbář",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní objekty", phone:"", landline:"", email:"" },
+  { name:"Jaroslava Římnáčová",             position:"Elektrikář-údržbář",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní objekty", phone:"", landline:"", email:"" },
+  { name:"Adam Vlček",                      position:"Elektrikář-údržbář",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní objekty", phone:"", landline:"", email:"" },
+  { name:"Kristýna Knesplová",              position:"Elektrikář-údržbář",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní objekty", phone:"", landline:"", email:"" },
 
   // Údržba / Správa
-  { name:"Václav Pešek",                    position:"Údržbář",                               oblast:"Sport", dept:"Správa",         place:"Zimní stadion",     phone:"", email:"" },
-  { name:"Jaroslav Pešek",                  position:"Vedoucí složiště",                      oblast:"Sport", dept:"Správa",         place:"Zimní stadion",     phone:"", email:"" },
-  { name:"Pavel Šlapanský",                 position:"Údržbář",                               oblast:"Sport", dept:"Správa",         place:"Sportovní hala",    phone:"", email:"" },
-  { name:"Ondřej Terber",                   position:"Údržbář",                               oblast:"Sport", dept:"Správa",         place:"Plavecký stadion",  phone:"", email:"" },
-  { name:"Ladislav Šturma",                 position:"Složiště",                              oblast:"Sport", dept:"Správa",         place:"Sportovní objekty", phone:"", email:"" },
-  { name:"Jan Preininger",                  position:"Složiště",                              oblast:"Sport", dept:"Správa",         place:"Sportovní objekty", phone:"", email:"" },
-  { name:"Vladimír Kutíl",                  position:"Složiště",                              oblast:"Sport", dept:"Správa",         place:"Sportovní objekty", phone:"", email:"" },
+  { name:"Václav Pešek",                    position:"Údržbář",                               oblast:"Sport", dept:"Správa",         place:"Zimní stadion",     phone:"", landline:"", email:"" },
+  { name:"Jaroslav Pešek",                  position:"Vedoucí složiště",                      oblast:"Sport", dept:"Správa",         place:"Zimní stadion",     phone:"", landline:"", email:"" },
+  { name:"Pavel Šlapanský",                 position:"Údržbář",                               oblast:"Sport", dept:"Správa",         place:"Sportovní hala",    phone:"", landline:"", email:"" },
+  { name:"Ondřej Terber",                   position:"Údržbář",                               oblast:"Sport", dept:"Správa",         place:"Plavecký stadion",  phone:"", landline:"", email:"" },
+  { name:"Ladislav Šturma",                 position:"Složiště",                              oblast:"Sport", dept:"Správa",         place:"Sportovní objekty", phone:"", landline:"", email:"" },
+  { name:"Jan Preininger",                  position:"Složiště",                              oblast:"Sport", dept:"Správa",         place:"Sportovní objekty", phone:"", landline:"", email:"" },
+  { name:"Vladimír Kutíl",                  position:"Složiště",                              oblast:"Sport", dept:"Správa",         place:"Sportovní objekty", phone:"", landline:"", email:"" },
 
   // Strojník-rolbař – Plavecký stadion
-  { name:"Jiří Csévar",                     position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", email:"" },
-  { name:"Leoš Hromádka",                   position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", email:"" },
-  { name:"Jan Šustr",                       position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", email:"" },
-  { name:"Ladislav Kolda",                  position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", email:"" },
+  { name:"Jiří Csévar",                     position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", landline:"", email:"" },
+  { name:"Leoš Hromádka",                   position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", landline:"", email:"" },
+  { name:"Jan Šustr",                       position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", landline:"", email:"" },
+  { name:"Ladislav Kolda",                  position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", landline:"", email:"" },
 
   // Strojník-rolbař – Zimní stadion
-  { name:"Jan Kolda",                       position:"Úsekový vedoucí strojník-rolbař",       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", email:"" },
-  { name:"Jiří Maršálek",                   position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", email:"" },
-  { name:"Rudolf Bazal",                    position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", email:"" },
-  { name:"Tomáš Sokolík",                   position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", email:"" },
-  { name:"Richard Landa",                   position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", email:"" },
-  { name:"Tomáš Sedláček",                  position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", email:"" },
-  { name:"Petr Šinko",                      position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", email:"" },
-  { name:"Jan Žižka",                       position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", email:"" },
-  { name:"František Čejka",                 position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", email:"" },
-  { name:"Jan Klimek",                      position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", email:"" },
+  { name:"Jan Kolda",                       position:"Úsekový vedoucí strojník-rolbař",       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", landline:"", email:"" },
+  { name:"Jiří Maršálek",                   position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", landline:"", email:"" },
+  { name:"Rudolf Bazal",                    position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", landline:"", email:"" },
+  { name:"Tomáš Sokolík",                   position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", landline:"", email:"" },
+  { name:"Richard Landa",                   position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", landline:"", email:"" },
+  { name:"Tomáš Sedláček",                  position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", landline:"", email:"" },
+  { name:"Petr Šinko",                      position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", landline:"", email:"" },
+  { name:"Jan Žižka",                       position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", landline:"", email:"" },
+  { name:"František Čejka",                 position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", landline:"", email:"" },
+  { name:"Jan Klimek",                      position:"Strojník-rolbař",                       oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", landline:"", email:"" },
 
   // Šatnářka-uklízečka – Plavecký stadion
-  { name:"Iva Šindelářová",                 position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", email:"" },
-  { name:"Hana Tománková",                  position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", email:"" },
-  { name:"Renata Novotná",                  position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", email:"" },
-  { name:"Vendula Tománková",               position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", email:"" },
-  { name:"Hanna Hrabar",                    position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", email:"" },
-  { name:"Tatiana Boiko",                   position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", email:"" },
-  { name:"Katarína Behenská",               position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", email:"" },
-  { name:"Kristýna Kadlecová",              position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", email:"" },
+  { name:"Iva Šindelářová",                 position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", landline:"", email:"" },
+  { name:"Hana Tománková",                  position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", landline:"", email:"" },
+  { name:"Renata Novotná",                  position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", landline:"", email:"" },
+  { name:"Vendula Tománková",               position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", landline:"", email:"" },
+  { name:"Hanna Hrabar",                    position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", landline:"", email:"" },
+  { name:"Tatiana Boiko",                   position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", landline:"", email:"" },
+  { name:"Katarína Behenská",               position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", landline:"", email:"" },
+  { name:"Kristýna Kadlecová",              position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", landline:"", email:"" },
 
   // Šatnářka-uklízečka – Sportovní hala
-  { name:"Renata Adamová",                  position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní hala",    phone:"", email:"" },
-  { name:"Alena Hofhanslová",               position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní hala",    phone:"", email:"" },
-  { name:"Bedřiška Kellnerová",             position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní hala",    phone:"", email:"" },
-  { name:"Anna Hainalli",                   position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní hala",    phone:"", email:"" },
+  { name:"Renata Adamová",                  position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní hala",    phone:"", landline:"", email:"" },
+  { name:"Alena Hofhanslová",               position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní hala",    phone:"", landline:"", email:"" },
+  { name:"Bedřiška Kellnerová",             position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní hala",    phone:"", landline:"", email:"" },
+  { name:"Anna Hainalli",                   position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Sportovní hala",    phone:"", landline:"", email:"" },
 
   // Šatnářka-uklízečka – Zimní stadion
-  { name:"Monika Cepková",                  position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", email:"" },
-  { name:"Iveta Neubauerová",               position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", email:"" },
-  { name:"Lucie Hofhanslová",               position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", email:"" },
-  { name:"Eva Hofhanslová",                 position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", email:"" },
+  { name:"Monika Cepková",                  position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", landline:"", email:"" },
+  { name:"Iveta Neubauerová",               position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", landline:"", email:"" },
+  { name:"Lucie Hofhanslová",               position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", landline:"", email:"" },
+  { name:"Eva Hofhanslová",                 position:"Šatnářka-uklízečka",                    oblast:"Sport", dept:"Provoz",         place:"Zimní stadion",     phone:"", landline:"", email:"" },
 
   // Saunérka
-  { name:"Jana Kolerová",                   position:"Saunérka",                              oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", email:"" },
-  { name:"Jitka Mačkalová",                 position:"Saunérka",                              oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", email:"" },
+  { name:"Jana Kolerová",                   position:"Saunérka",                              oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", landline:"", email:"" },
+  { name:"Jitka Mačkalová",                 position:"Saunérka",                              oblast:"Sport", dept:"Provoz",         place:"Plavecký stadion",  phone:"", landline:"", email:"" },
 
   // ── KULTURA ───────────────────────────────────────────────
-  { name:"MgA. Kristýna Hájková",           position:"Kurátorka",                             oblast:"Kultura", dept:"Kurátorství", place:"Dům umění",         phone:"", email:"" },
-  { name:"BcA. Michala Horanová",           position:"Referent kultury",                      oblast:"Kultura", dept:"Administrativa", place:"Dům umění",      phone:"", email:"" },
-  { name:"Mgr. Šárka Kosová",               position:"Pedagog – edukace",                     oblast:"Kultura", dept:"Edukace",     place:"Dům umění",         phone:"", email:"" },
-  { name:"Petr Matějka",                    position:"Produkční",                             oblast:"Kultura", dept:"Produkce",    place:"KD Vltava",         phone:"", email:"" },
-  { name:"Tomáš Albín",                     position:"Správce objektu",                       oblast:"Kultura", dept:"Správa",      place:"KD Vltava",         phone:"", email:"" },
+  { name:"MgA. Kristýna Hájková",           position:"Kurátorka",                             oblast:"Kultura", dept:"Kurátorství", place:"Dům umění",         phone:"", landline:"", email:"" },
+  { name:"BcA. Michala Horanová",           position:"Referent kultury",                      oblast:"Kultura", dept:"Administrativa", place:"Dům umění",      phone:"", landline:"", email:"" },
+  { name:"Mgr. Šárka Kosová",               position:"Pedagog – edukace",                     oblast:"Kultura", dept:"Edukace",     place:"Dům umění",         phone:"", landline:"", email:"" },
+  { name:"Petr Matějka",                    position:"Produkční",                             oblast:"Kultura", dept:"Produkce",    place:"KD Vltava",         phone:"", landline:"", email:"" },
+  { name:"Tomáš Albín",                     position:"Správce objektu",                       oblast:"Kultura", dept:"Správa",      place:"KD Vltava",         phone:"", landline:"", email:"" },
 ];
 
 // ── BARVY ──────────────────────────────────────────────────
@@ -375,7 +375,7 @@ function render() {
   const filtered = employees.filter(e => {
     if (currentOblast !== "all" && e.oblast !== currentOblast) return false;
     if (currentDept   !== "all" && e.dept   !== currentDept)   return false;
-    if (q && ![e.name, e.position, e.oblast, e.dept, e.place, e.phone, e.email]
+    if (q && ![e.name, e.position, e.oblast, e.dept, e.place, e.phone, e.landline, e.email]
               .some(v => v && v.toLowerCase().includes(q))) return false;
     return true;
   });
@@ -402,6 +402,9 @@ function render() {
     const phoneCell = e.phone
       ? `<a class="phone-link" href="tel:${e.phone.replace(/\s/g,"")}">${phoneIcon} ${e.phone}</a>`
       : `<span style="color:var(--muted);font-size:13px">—</span>`;
+    const landlineCell = e.landline
+      ? `<a class="phone-link" href="tel:${e.landline.replace(/\s/g,'')}">${phoneIcon} ${e.landline}</a>`
+      : `<span style="color:var(--muted);font-size:13px">—</span>`;
     const emailCell = e.email
       ? `<a class="email-link" href="mailto:${e.email}">${mailIcon} ${e.email}</a>`
       : `<span style="color:var(--muted);font-size:13px">—</span>`;
@@ -420,6 +423,7 @@ function render() {
       <td><span class="badge" style="background:${dc.bg};color:${dc.text}">${e.dept}</span></td>
       <td style="font-size:13px;color:var(--muted)">${e.place || "—"}</td>
       <td>${phoneCell}</td>
+      <td>${landlineCell}</td>
       <td>${emailCell}</td>`;
     tbody.appendChild(tr);
   });
