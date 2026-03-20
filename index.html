@@ -320,8 +320,11 @@
 <div id="mobileCards">
 
 <footer>
-  <button onclick="exportPdf()">Export PDF</button>
-  Aktualizováno: <span id="updateDate"></span> &nbsp;·&nbsp; Platné od 1. 1. 2026 &nbsp;·&nbsp; Interní dokument – Kultura a sport
+  <div class="export-btns">
+    <button class="export-btn" onclick="exportXlsx()">⬇ Export do Excelu</button>
+    <button class="export-btn" onclick="exportPdf()">⬇ Export do PDF</button>
+  </div>
+  <div>Aktualizováno: <span id="updateDate"></span> &nbsp;·&nbsp; Platné od 1. 1. 2026 &nbsp;·&nbsp; Interní dokument – Kultura a sport</div>
 </footer>
 
 <script>
