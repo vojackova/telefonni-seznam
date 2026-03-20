@@ -649,5 +649,56 @@ buildOblastFilters();
 buildDeptFilters();
 render();
 </script>
+<script>
+function exportPdf() {
+    let html = `
+        <html>
+        <head>
+            <title>Telefonní seznam</title>
+            <style>
+                table { border-collapse: collapse; width: 100%; }
+                th, td { border: 1px solid black; padding: 8px; text-align: left; }
+            </style>
+        </head>
+        <body>
+            <h2>Telefonní seznam</h2>
+            <table>
+                <tr>
+                    <th>Jméno</th>
+                    <th>Telefon</th>
+                    <th>Email</th>
+                    <th>Oddělení</th>
+                </tr>
+    `;
+
+    employees.forEach(e => {
+        html += `
+            <tr>
+                <td>${e.name}</td>
+                <td>${e.phone}</td>
+                <td>${e.email}</td>
+                <td>${e.department}</td>
+            </tr>
+        `;
+    });
+
+    html += `
+            </table>
+        </body>
+        </html>
+    `;
+
+    const win = window.open("", "", "width=800,height=600");
+    win.document.write(html);
+    win.document.close();
+
+    setTimeout(() => {
+        win.print();
+    }, 500);
+}
+</script>
+<footer>
+    <button onclick="exportPdf()">Export PDF</button>
+</footer>
 </body>
 </html>
