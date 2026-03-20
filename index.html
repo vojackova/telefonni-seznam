@@ -320,10 +320,6 @@
 <div id="mobileCards">
 
 <footer>
-  <div class="export-btns">
-    <button class="export-btn" onclick="exportXlsx()">⬇ Export do Excelu</button>
-    <button class="export-btn" onclick="exportPdf()">⬇ Export do PDF</button>
-  </div>
   <div>Aktualizováno: <span id="updateDate"></span> &nbsp;·&nbsp; Platné od 1. 1. 2026 &nbsp;·&nbsp; Interní dokument – Kultura a sport</div>
 </footer>
 
@@ -652,54 +648,6 @@ document.getElementById("updateDate").textContent = new Date().toLocaleDateStrin
 buildOblastFilters();
 buildDeptFilters();
 render();
-</script>
-<script>
-function exportPdf() {
-    let html = `
-        <html>
-        <head>
-            <title>Telefonní seznam</title>
-            <style>
-                table { border-collapse: collapse; width: 100%; }
-                th, td { border: 1px solid black; padding: 8px; text-align: left; }
-            </style>
-        </head>
-        <body>
-            <h2>Telefonní seznam</h2>
-            <table>
-                <tr>
-                    <th>Jméno</th>
-                    <th>Telefon</th>
-                    <th>Email</th>
-                    <th>Oddělení</th>
-                </tr>
-    `;
-
-    employees.forEach(e => {
-        html += `
-            <tr>
-                <td>${e.name}</td>
-                <td>${e.phone}</td>
-                <td>${e.email}</td>
-                <td>${e.department}</td>
-            </tr>
-        `;
-    });
-
-    html += `
-            </table>
-        </body>
-        </html>
-    `;
-
-    const win = window.open("", "", "width=800,height=600");
-    win.document.write(html);
-    win.document.close();
-
-    setTimeout(() => {
-        win.print();
-    }, 500);
-}
 </script>
 </body>
 </html>
