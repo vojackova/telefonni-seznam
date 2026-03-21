@@ -263,6 +263,58 @@
     letter-spacing: 0.04em;
   }
 
+
+  /* ── ZÁLOŽKY ──────────────────────────────────────────── */
+  .tab-nav {
+    display: flex; gap: 4px;
+    padding: 0 48px; margin-bottom: -1px; position: relative; z-index: 1;
+  }
+  .tab-btn {
+    padding: 10px 24px; border-radius: 10px 10px 0 0;
+    border: 1.5px solid var(--border); border-bottom: none;
+    background: var(--bg); color: var(--muted);
+    font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600;
+    cursor: pointer; transition: all 0.15s;
+  }
+  .tab-btn:hover { color: var(--navy); background: var(--surface); }
+  .tab-btn.active { background: var(--surface); color: var(--navy); border-color: var(--border); }
+
+  /* ── TABULKA BUDOV ────────────────────────────────────── */
+  #buildingsView { display: none; }
+  #buildingsView.active { display: block; }
+  #employeesView { display: block; }
+  #employeesView.hidden { display: none; }
+
+  .buildings-wrap { padding: 0 48px 32px; }
+  .building-section { margin-bottom: 32px; }
+  .building-title {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: #fff;
+    background: var(--navy); padding: 8px 18px; border-radius: 8px 8px 0 0;
+    margin-bottom: 0;
+  }
+  .building-table { width: 100%; border-collapse: collapse;
+    border: 1.5px solid var(--border); border-top: none; border-radius: 0 0 8px 8px;
+    overflow: hidden;
+  }
+  .building-table td {
+    padding: 9px 18px; border-bottom: 1px solid var(--border);
+    font-size: 13px; color: var(--text);
+  }
+  .building-table tr:last-child td { border-bottom: none; }
+  .building-table tr:nth-child(even) td { background: var(--bg); }
+  .building-table td:first-child { color: var(--muted); font-weight: 500; width: 55%; }
+  .building-table td:last-child { font-weight: 700; color: var(--navy); white-space: nowrap; }
+  .building-phone { text-decoration: none; color: var(--navy); font-weight: 700; }
+  .building-phone:hover { text-decoration: underline; }
+
+  @media (max-width: 900px) {
+    .tab-nav { padding: 0 16px; }
+    .tab-btn { padding: 9px 16px; font-size: 12px; }
+    .buildings-wrap { padding: 0 12px 24px; }
+    .building-table td { padding: 8px 12px; font-size: 12px; }
+  }
+
 </style>
 </head>
 <body>
@@ -279,6 +331,12 @@
   <div class="header-count">Zobrazeno <span id="visibleCount">0</span> z <span id="totalCount">0</span> zaměstnanců</div>
 </header>
 
+<div class="tab-nav">
+  <button class="tab-btn active" onclick="switchTab('employees')">👥 Zaměstnanci</button>
+  <button class="tab-btn" onclick="switchTab('buildings')">🏢 Budovy</button>
+</div>
+
+<div id="employeesView">
 <div class="controls">
   <div class="search-wrap">
     <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -319,6 +377,53 @@
 
 <div id="mobileCards">
 </div>
+
+</div><!-- /employeesView -->
+
+<div id="buildingsView">
+<div class="buildings-wrap">
+
+  <div class="building-section">
+    <div class="building-title">Plavecký stadion</div>
+    <table class="building-table">
+      <tr><td>Pokladna</td><td><a class="building-phone" href="tel:386107141">386 107 141</a></td></tr>
+      <tr><td>Vrátnice</td><td><a class="building-phone" href="tel:386107154">386 107 154</a></td></tr>
+      <tr><td>Plavčíci – velký bazén</td><td><a class="building-phone" href="tel:386107146">386 107 146</a></td></tr>
+      <tr><td>Plavčíci – dětský bazén</td><td><a class="building-phone" href="tel:386107147">386 107 147</a></td></tr>
+      <tr><td>Plavčíci – letní plovárna</td><td><a class="building-phone" href="tel:386107148">386 107 148</a></td></tr>
+      <tr><td>Strojníci – velín</td><td><a class="building-phone" href="tel:386107152">386 107 152</a></td></tr>
+      <tr><td>Šatna pánská</td><td><a class="building-phone" href="tel:386107143">386 107 143</a></td></tr>
+      <tr><td>Šatna dámská</td><td><a class="building-phone" href="tel:386107144">386 107 144</a></td></tr>
+      <tr><td>Šatna – dětský bazén</td><td><a class="building-phone" href="tel:386107149">386 107 149</a></td></tr>
+      <tr><td>Sauna</td><td><a class="building-phone" href="tel:386107145">386 107 145</a></td></tr>
+      <tr><td>Elektrikář</td><td><a class="building-phone" href="tel:386107153">386 107 153</a></td></tr>
+    </table>
+  </div>
+
+  <div class="building-section">
+    <div class="building-title">Zimní stadion</div>
+    <table class="building-table">
+      <tr><td>Sekretariát</td><td><a class="building-phone" href="tel:386107113">386 107 113</a></td></tr>
+      <tr><td>Vrátnice</td><td><a class="building-phone" href="tel:386107111">386 107 111</a></td></tr>
+      <tr><td>Dílna</td><td><a class="building-phone" href="tel:386107105">386 107 105</a></td></tr>
+      <tr><td>Strojovna</td><td><a class="building-phone" href="tel:386107108">386 107 108</a></td></tr>
+      <tr><td>Rolbovna</td><td><a class="building-phone" href="tel:386107109">386 107 109</a></td></tr>
+      <tr><td>Úklid</td><td><a class="building-phone" href="tel:386107107">386 107 107</a></td></tr>
+      <tr><td>Elektrikář</td><td><a class="building-phone" href="tel:386107106">386 107 106</a></td></tr>
+    </table>
+  </div>
+
+  <div class="building-section">
+    <div class="building-title">Sportovní hala</div>
+    <table class="building-table">
+      <tr><td>Vrátnice</td><td><a class="building-phone" href="tel:386107181">386 107 181</a></td></tr>
+      <tr><td>Dílna</td><td><a class="building-phone" href="tel:386107183">386 107 183</a></td></tr>
+      <tr><td>Úklid</td><td><a class="building-phone" href="tel:386107182">386 107 182</a></td></tr>
+    </table>
+  </div>
+
+</div>
+</div><!-- /buildingsView -->
 
 <footer>
   Aktualizováno: <span id="updateDate"></span> &nbsp;·&nbsp; Platné od 1. 1. 2026 &nbsp;·&nbsp; Interní dokument – Kultura a sport
@@ -649,6 +754,25 @@ document.getElementById("updateDate").textContent = new Date().toLocaleDateStrin
 buildOblastFilters();
 buildDeptFilters();
 render();
+
+// ── PŘEPÍNÁNÍ ZÁLOŽEK ───────────────────────────────────────────────────────
+function switchTab(tab) {
+  const emp = document.getElementById('employeesView');
+  const bld = document.getElementById('buildingsView');
+  const btns = document.querySelectorAll('.tab-btn');
+  if (tab === 'employees') {
+    emp.classList.remove('hidden');
+    bld.classList.remove('active');
+    btns[0].classList.add('active');
+    btns[1].classList.remove('active');
+  } else {
+    emp.classList.add('hidden');
+    bld.classList.add('active');
+    btns[0].classList.remove('active');
+    btns[1].classList.add('active');
+  }
+}
+
 </script>
 </body>
 </html>
