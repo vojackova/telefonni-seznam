@@ -315,6 +315,28 @@
     .building-table td { padding: 8px 12px; font-size: 12px; }
   }
 
+
+  .pdf-btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 9px 20px; border-radius: 9px;
+    background: var(--navy); color: #fff; border: none;
+    font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600;
+    cursor: pointer; transition: background 0.15s;
+    margin: 20px 48px 0;
+  }
+  .pdf-btn:hover { background: var(--navy-mid); }
+  @media (max-width: 900px) { .pdf-btn { margin: 16px 12px 0; } }
+
+  /* Print styl – skryje vše kromě buildings-print */
+  @media print {
+    body > * { display: none !important; }
+    #buildings-print.print-active { display: block !important; }
+    #employees-print.print-active { display: block !important; }
+    @page { size: A4 portrait; margin: 15mm 14mm; }
+  }
+  #buildings-print { display: none; }
+  #employees-print { display: none; }
+
 </style>
 </head>
 <body>
@@ -378,6 +400,7 @@
 <div id="mobileCards">
 </div>
 
+<button class="pdf-btn" onclick="exportEmployeesPdf()">⬇ Stáhnout PDF (A4)</button>
 </div><!-- /employeesView -->
 
 <div id="buildingsView">
@@ -423,6 +446,7 @@
   </div>
 
 </div>
+<button class="pdf-btn" onclick="exportBuildingsPdf()">⬇ Stáhnout PDF (A4)</button>
 </div><!-- /buildingsView -->
 
 <footer>
@@ -555,6 +579,12 @@ const deptColors = {
 
 const avatarPalette = ["#0f1f3d","#1565c0","#2e7d5e","#7b3fa0","#c0392b","#e67e22","#16a085","#8e44ad"];
 
+
+function allSorted() {
+  return employees.slice().sort((a, b) =>
+    lastName(a.name).localeCompare(lastName(b.name), "cs")
+  );
+}
 
 function lastName(name) {
   const tituly = new Set([
@@ -774,5 +804,118 @@ function switchTab(tab) {
 }
 
 </script>
+
+<!-- ── PRINT ŠABLONA (A4) ────────────────── -->
+<div id="buildings-print">
+  <style>
+    #buildings-print { font-family: Arial, sans-serif; font-size: 9pt; color: #1d2c35; }
+    #buildings-print h1 { font-size: 12pt; font-weight: 700; margin: 0 0 2mm; }
+    #buildings-print p.sub { font-size: 7.5pt; color: #666; margin: 0 0 6mm; }
+    #buildings-print .bp-section { margin-bottom: 6mm; break-inside: avoid; }
+    #buildings-print .bp-title {
+      background: #1d2c35; color: #fff; font-size: 9pt; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 2mm 4mm; margin-bottom: 0;
+    }
+    #buildings-print table { width: 100%; border-collapse: collapse; }
+    #buildings-print td {
+      padding: 1.8mm 4mm; border-bottom: 0.3mm solid #ddd;
+      font-size: 9pt;
+    }
+    #buildings-print tr:last-child td { border-bottom: none; }
+    #buildings-print tr:nth-child(even) td { background: #f5f0e0; }
+    #buildings-print td:first-child { color: #455a64; width: 60%; }
+    #buildings-print td:last-child { font-weight: 700; }
+    #buildings-print .bp-footer { margin-top: 8mm; font-size: 7pt; color: #aaa; text-align: center; }
+  </style>
+  <h1>Kulturní a sportovní zařízení města České Budějovice</h1>
+  <p class="sub">Telefonní seznam – přímé linky budov &nbsp;·&nbsp; Interní dokument &nbsp;·&nbsp; Platné od 1. 1. 2026</p>
+
+  <div class="bp-section">
+    <div class="bp-title">Plavecký stadion</div>
+    <table>
+      <tr><td>Pokladna</td><td>386 107 141</td></tr>
+      <tr><td>Vrátnice</td><td>386 107 154</td></tr>
+      <tr><td>Plavčíci – velký bazén</td><td>386 107 146</td></tr>
+      <tr><td>Plavčíci – dětský bazén</td><td>386 107 147</td></tr>
+      <tr><td>Plavčíci – letní plovárna</td><td>386 107 148</td></tr>
+      <tr><td>Strojníci – velín</td><td>386 107 152</td></tr>
+      <tr><td>Šatna pánská</td><td>386 107 143</td></tr>
+      <tr><td>Šatna dámská</td><td>386 107 144</td></tr>
+      <tr><td>Šatna – dětský bazén</td><td>386 107 149</td></tr>
+      <tr><td>Sauna</td><td>386 107 145</td></tr>
+      <tr><td>Elektrikář</td><td>386 107 153</td></tr>
+    </table>
+  </div>
+
+  <div class="bp-section">
+    <div class="bp-title">Zimní stadion</div>
+    <table>
+      <tr><td>Sekretariát</td><td>386 107 113</td></tr>
+      <tr><td>Vrátnice</td><td>386 107 111</td></tr>
+      <tr><td>Dílna</td><td>386 107 105</td></tr>
+      <tr><td>Strojovna</td><td>386 107 108</td></tr>
+      <tr><td>Rolbovna</td><td>386 107 109</td></tr>
+      <tr><td>Úklid</td><td>386 107 107</td></tr>
+      <tr><td>Elektrikář</td><td>386 107 106</td></tr>
+    </table>
+  </div>
+
+  <div class="bp-section">
+    <div class="bp-title">Sportovní hala</div>
+    <table>
+      <tr><td>Vrátnice</td><td>386 107 181</td></tr>
+      <tr><td>Dílna</td><td>386 107 183</td></tr>
+      <tr><td>Úklid</td><td>386 107 182</td></tr>
+    </table>
+  </div>
+
+  <div class="bp-footer">Vytištěno: <span id="print-date"></span></div>
+</div>
+
+
+<!-- ── PRINT ŠABLONA ZAMĚSTNANCI (A4) ─── -->
+<div id="employees-print">
+  <style>
+    #employees-print { font-family: Arial, sans-serif; font-size: 8pt; color: #1d2c35; }
+    #employees-print h1 { font-size: 11pt; font-weight: 700; margin: 0 0 1mm; }
+    #employees-print p.sub { font-size: 7pt; color: #666; margin: 0 0 4mm; }
+    #employees-print table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+    #employees-print col.c-name     { width: 22%; }
+    #employees-print col.c-position { width: 20%; }
+    #employees-print col.c-dept     { width: 16%; }
+    #employees-print col.c-place    { width: 15%; }
+    #employees-print col.c-phone    { width: 13%; }
+    #employees-print col.c-email    { width: 14%; }
+    #employees-print thead th {
+      background: #1d2c35; color: #fff; padding: 2mm 2mm;
+      font-size: 7.5pt; font-weight: 700; text-align: left;
+      letter-spacing: 0.03em;
+    }
+    #employees-print tbody td {
+      padding: 1.6mm 2mm; border-bottom: 0.2mm solid #ddd;
+      font-size: 7.5pt; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    #employees-print tbody tr:nth-child(even) td { background: #f5f0e0; }
+    #employees-print .ep-footer { margin-top: 5mm; font-size: 6.5pt; color: #aaa; text-align: center; }
+  </style>
+  <h1>Kulturní a sportovní zařízení města České Budějovice</h1>
+  <p class="sub">Telefonní seznam zaměstnanců &nbsp;·&nbsp; Interní dokument &nbsp;·&nbsp; Platné od 1. 1. 2026</p>
+  <table>
+    <colgroup>
+      <col class="c-name"><col class="c-position"><col class="c-dept">
+      <col class="c-place"><col class="c-phone"><col class="c-email">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Jméno</th><th>Pozice</th><th>Sekce</th>
+        <th>Pracoviště</th><th>Mobil / Pevná</th><th>E-mail</th>
+      </tr>
+    </thead>
+    <tbody id="ep-tbody"></tbody>
+  </table>
+  <div class="ep-footer">Vytištěno: <span id="ep-date"></span></div>
+</div>
+
 </body>
 </html>
